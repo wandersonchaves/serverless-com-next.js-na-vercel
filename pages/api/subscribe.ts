@@ -1,5 +1,7 @@
 import { NowRequest, NowResponse } from "@vercel/node";
 
 export default (request: NowRequest, response: NowResponse) => {
-  return response.json({ message: "Hello World" });
+  const { email } = request.body;
+
+  return response.json({ message: { email } });
 };
